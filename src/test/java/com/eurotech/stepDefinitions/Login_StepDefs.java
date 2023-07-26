@@ -43,6 +43,10 @@ public class Login_StepDefs {
     public void the_user_should_be_able_to_see_own_username() {
         System.out.println("Can be able to see own username");
     }
+    @When("The user enters John`s creadentials")
+    public void the_user_enters_john_s_creadentials() {
+        System.out.println("I enter John`s createntials");
+    }
 
 
 }
