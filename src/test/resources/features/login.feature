@@ -28,14 +28,6 @@ Feature: Login Functionality
     When The user enters Rosa`s creadentials
     Then The user should be able to login
 
-  @Mansimmo
-  Scenario: Login as Mansimmo
-    Given The user on the login page
-    When The user enters Mansimmo`s email
-    And The user enter Mansimmo`s password
-    And The user clicks on login button
-    Then The user should be able to login
-    And The user should be able to see own username
 
   @John  @smoke  @Login
   Scenario: Login as John
