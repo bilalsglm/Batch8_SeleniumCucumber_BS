@@ -20,7 +20,7 @@ Feature: Navigation Menu Tests
 
    @Developers @Navigation @smoke
    Scenario: Navigation to Developers Menu
-     Given The user on the login page
+     Given The user is on the login page
      When Login as Mike
      Then Validate that Dashboard text is visible
      When Go to developers manu
@@ -28,7 +28,7 @@ Feature: Navigation Menu Tests
 
    @Froms  @Navigation
    Scenario: Navigation to From-Input
-     Given The user on the login page
+     Given The user is on the login page
      When Login as Sebastian
      Then Validate that Dashboard text is visible
      When Go to forms-input menu
@@ -36,8 +36,8 @@ Feature: Navigation Menu Tests
 
    @UserProfile  @Navigation
    Scenario: Navigation to user profile manu
-     Given The user on the login page
-     When Login as MikeJohn
+     Given The user is on the login page
+     When Login as John
      Then Validate that Dashboard text is visible
      When Go to My Profile menu
-     Then Validate that 'User Profile' text is visible
+     Then Validate that User Profile text is visible

@@ -35,18 +35,17 @@ public class NavigationMenu_StepDefs {
         System.out.println("Validate that General From Elements-Input text is visible");
     }
 
-
-    @When("Login as MikeJohn")
-    public void login_as_mike_john() {
-        System.out.println("Login as MikeJohn");
+    @When("Login as John")
+    public void login_as_john() {
+        System.out.println("Login as John");
     }
     @When("Go to My Profile menu")
     public void go_to_my_profile_menu() {
         System.out.println("Go to My Profile menu");
     }
-    @Then("Validate that {string} text is visible")
-    public void validate_that_text_is_visible(String string) {
-        System.out.println("Validate that {string} text is visible");
+    @Then("Validate that User Profile text is visible")
+    public void validate_that_user_Profile_is_visible() {
+        System.out.println("Validate that User Profile text is visible");
     }
 
 }

@@ -1,5 +1,8 @@
 package com.eurotech.pages;
 
+import com.eurotech.utilities.BrowserUtils;
+import com.eurotech.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
@@ -37,4 +40,11 @@ public class EditProfilPage extends BasePage{
         return select.getFirstSelectedOption().getText();
     }
 
+    public void editProfileInfo(String profileBox,String userInfo){
+
+        WebElement inputBox = Driver.get().findElement(By.name(profileBox));
+//        inputBox.clear();
+//        inputBox.sendKeys(userInfo);
+        BrowserUtils.clearAndSendKeys(inputBox,userInfo);
+    }
 }

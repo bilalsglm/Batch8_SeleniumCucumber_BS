@@ -63,10 +63,10 @@
                 <configuration>
                     <testFailureIgnore>true</testFailureIgnore>
                     <runOrder>Alphabetical</runOrder>
-                    <!--  <rerunFailingTestsCount>2</rerunFailingTestsCount> -->
+<!--                      <rerunFailingTestsCount>1</rerunFailingTestsCount>-->
                     <includes>
                         <include>**/*CukesRunner.java</include>
-                        <!--   <include>**/*FailedTestRunner.java</include>-->
+                           <include>**/*FailedTestRunner.java</include>
                     </includes>
                 </configuration>
             </plugin>
