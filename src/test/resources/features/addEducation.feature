@@ -15,8 +15,7 @@
         | From Date               |
         | To Date                 |
         | Program Description     |
-
-      @c_addEducation
+      @c_addEducation @rerun
       Scenario Outline:
         Given The user is on the login page
         When The user logs in with using credentials "<email>" and "<password>"
