@@ -47,7 +47,7 @@ Feature: Login Tests with cucumber parameters
       | Bilal12345      |
     Then The user should be able to login
 
-  @wip @rerun
+   @rerun
   Scenario Outline: Login with list DDF
     When The user logins with following credentials
       | <userEmail> |

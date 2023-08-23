@@ -3,6 +3,7 @@ package com.eurotech.stepDefinitions;
 import com.eurotech.pages.LoginPage;
 import com.eurotech.utilities.ConfigurationReader;
 import com.eurotech.utilities.Driver;
+import com.eurotech.utilities.ExcelUtil;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -82,5 +83,37 @@ public class Login_StepDefs {
     public void theUserLoginsWithFollowingCredentials(List<String> userCredentials) {
         loginPage.login(userCredentials.get(0),userCredentials.get(1));
     }
+
+    @When("The user logins with using excel file:{string},{string} and {int}")
+    public void the_user_logins_with_using_excel_file_and(String path, String sheetName, Integer row) {
+        ExcelUtil excelUtil=new ExcelUtil(path, sheetName);
+        List<Map<String,String>> dataList=excelUtil.getDataList();
+
+        String yourEmail=dataList.get(row).get("Your Email");
+        String yourName= dataList.get(row).get("Your Name");
+        String password =dataList.get(row).get("Password");
+
+        System.out.println("dataList = " + dataList);
+
+        System.out.println("yourEmail = " + yourEmail);
+        System.out.println("yourName = " + yourName);
+        System.out.println("password = " + password);
+
+
+        loginPage.login(yourEmail,password);
+    }
+
+    @When("The user logins with {string} and {string} using excel file:{string},{string} and {int}")
+    public void the_user_logins_with_and_using_excel_file_and(String yourEmailColumnHeaders, String passwordColumnHeaders, String path, String sheetName, Integer row) {
+        List<Map<String,String>> dataList = loginPage.getExcelData(path,sheetName);
+        String email= dataList.get(row).get(yourEmailColumnHeaders);
+        String password=dataList.get(row).get(passwordColumnHeaders);
+
+        loginPage.login(email,password);
+
+
+    }
+
 }
+
 
